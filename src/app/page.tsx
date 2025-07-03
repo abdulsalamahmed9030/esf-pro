@@ -1,4 +1,5 @@
 import Hero from "./components/Hero";
+import OurProcess from "./components/OurProcess";
 import WhatWeDo from "./components/WhatWeDo";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <>
     <Hero />
     <WhatWeDo />
+    <OurProcess />
     </>
   );
 }
