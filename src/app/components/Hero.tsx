@@ -88,15 +88,15 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center">
         <AnimatePresence mode="wait">
           <motion.h1
-            key={headlines[headlineIndex]} // Important for exit/enter
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="font-dosis text-[60px] md:text-[72px] font-light tracking-widest mb-4 transition-all duration-500 select-none"
-          >
-            {headlines[headlineIndex]}
-          </motion.h1>
+  key={headlines[headlineIndex]}
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 0.5 }}
+  className="font-dosis text-[40px] md:text-[72px] font-extralight md:font-light tracking-widest mb-4 transition-all duration-500 select-none"
+>
+  {headlines[headlineIndex]}
+</motion.h1>
         </AnimatePresence>
 
         <div className="flex flex-col sm:flex-row gap-4">
