@@ -38,7 +38,6 @@ export default function OurProcess() {
           </div>
         </div>
 
-        
         <div className="flex flex-wrap justify-center gap-8 md:gap-28">
           {steps.map((step, index) => {
             const isActive = active === index;
@@ -48,17 +47,27 @@ export default function OurProcess() {
                 onClick={() => setActive(index)}
                 className="relative group focus:outline-none"
               >
-                <div
-  className={`w-44 h-44 rounded-full flex items-center justify-center transition-all duration-300
-  ${isActive ? "bg-transparent border border-white" : "bg-yellow-500 hover:bg-yellow-600"}`}
->
-
-                  <span
-                    className={`text-sm font-semibold tracking-widest px-4 text-center
-                    ${isActive ? "text-white" : "text-black"}`}
+                <div className="flex flex-col items-center">
+                  <div
+                    className={`w-44 h-44 rounded-full flex items-center justify-center transition-all duration-300
+      ${
+        isActive
+          ? "bg-transparent border border-white"
+          : "bg-yellow-500 hover:bg-yellow-600"
+      }`}
                   >
-                    {step.label}
-                  </span>
+                    <span
+                      className={`text-sm font-semibold tracking-widest px-4 text-center
+        ${isActive ? "text-white" : "text-black"}`}
+                    >
+                      {step.label}
+                    </span>
+                  </div>
+
+                  {/* Vertical Line (Lollipop stick) - only for active & desktop */}
+                  {isActive && (
+                    <div className="hidden md:block w-[0.5px] h-12 bg-white mt-1 opacity-70" />
+                  )}
                 </div>
               </button>
             );

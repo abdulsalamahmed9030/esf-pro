@@ -1,5 +1,9 @@
+import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
 import Hero from "./components/Hero";
 import OurProcess from "./components/OurProcess";
+import Testimonials from "./components/Testimonial";
+import ViewAllProjectsBanner from "./components/ViewAllProjects";
 import WhatWeDo from "./components/WhatWeDo";
 
 export default function Home() {
@@ -8,6 +12,10 @@ export default function Home() {
     <Hero />
     <WhatWeDo />
     <OurProcess />
+    <Gallery />
+    <ViewAllProjectsBanner />
+    <Testimonials />
+    <Footer />
     </>
   );
 }

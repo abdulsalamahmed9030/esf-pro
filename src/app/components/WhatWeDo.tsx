@@ -45,7 +45,7 @@ export default function WhatWeDo() {
             </div>
           </div>
         </div>
-
+ 
         <div className="grid md:grid-cols-3 gap-12">
           {services.map((service, index) => (
             <motion.div
