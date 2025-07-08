@@ -25,8 +25,8 @@ export default function Navbar() {
     {
       name: "Services",
       dropdown: [
-       { name: "Residential", href: "/services?type=residential" },
-{ name: "Commercial", href: "/services?type=commercial" },
+       { name: "Residential", href: "/services/residential" },
+{ name: "Commercial", href: "/services/commercial" },
 
       ],
     },
