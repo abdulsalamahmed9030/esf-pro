@@ -5,11 +5,11 @@ import { Building2, ServerCog, Lightbulb, Power, ShieldCheck } from "lucide-reac
 import SolutionsWeProvide from "@/app/components/SolutionsWeProvide";
 
 const solutions = [
-  { title: "Commercial Electrical Installations", icon: Building2 },
-  { title: "Panel Replacements & Maintenance", icon: ServerCog },
-  { title: "Retail Lighting Systems", icon: Lightbulb },
-  { title: "Backup Generators & Power Systems", icon: Power },
-  { title: "Commercial Security Systems", icon: ShieldCheck },
+  { title: "Commercial Electrical Installations", icon: Building2, href: "/commercial/electrical-installations" },
+  { title: "Panel Replacements & Maintenance", icon: ServerCog, href: "/commercial/panel-replacements" },
+  { title: "Retail Lighting Systems", icon: Lightbulb, href: "/commercial/retail-lighting" },
+  { title: "Backup Generators & Power Systems", icon: Power, href: "/commercial/backup-generators" },
+  { title: "Commercial Security Systems", icon: ShieldCheck, href: "/commercial/security-systems" },
 ];
 
 export default function Commercial() {

@@ -7,7 +7,7 @@ const page = () => {
   return (
     <>
       <SectionBanner
-              title="Services"
+              title="Residential Services"
               backgroundImage="/residential.jpg"
             />
             <ResidentialPage />

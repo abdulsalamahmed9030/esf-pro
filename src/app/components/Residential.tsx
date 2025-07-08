@@ -5,12 +5,13 @@ import { PlugZap, Settings, Shield, AlarmSmoke, BatteryCharging } from "lucide-r
 import SolutionsWeProvide from "@/app/components/SolutionsWeProvide";
 
 const solutions = [
-  { title: "Home Electrical Installations", icon: PlugZap },
-  { title: "Panel Upgrades & Circuit Repairs", icon: Settings },
-  { title: "Home Security Systems", icon: Shield },
-  { title: "Fire Alarm & Sprinkler Systems", icon: AlarmSmoke },
-  { title: "EV Charger Installation", icon: BatteryCharging },
+  { title: "Home Electrical Installations", icon: PlugZap, href: "/services/electrical-installations" },
+  { title: "Panel Upgrades & Circuit Repairs", icon: Settings, href: "/services/residential/panel-upgrades" },
+  { title: "Home Security Systems", icon: Shield, href: "/services/residential/security-systems" },
+  { title: "Fire Alarm & Sprinkler Systems", icon: AlarmSmoke, href: "/services/residential/fire-alarm" },
+  { title: "EV Charger Installation", icon: BatteryCharging, href: "/services/residential/ev-charger" },
 ];
+
 
 export default function ResidentialPage() {
   return (

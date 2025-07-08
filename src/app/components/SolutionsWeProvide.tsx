@@ -1,10 +1,12 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 
 interface SolutionItem {
   title: string;
   icon: React.ElementType;
+  href: string; // ✅ Add href for internal routing
 }
 
 export default function SolutionsWeProvide({ solutions }: { solutions: SolutionItem[] }) {
@@ -23,14 +25,8 @@ export default function SolutionsWeProvide({ solutions }: { solutions: SolutionI
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto font-dosis">
-        {solutions.slice(0, 2).map((item, index) => (
-          <SolutionCard key={index} title={item.title} icon={item.icon} />
-        ))}
-
-        
-
-        {solutions.slice(2).map((item, index) => (
-          <SolutionCard key={index + 2} title={item.title} icon={item.icon} />
+        {solutions.map((item, index) => (
+          <SolutionCard key={index} title={item.title} icon={item.icon} href={item.href} />
         ))}
       </div>
     </section>
@@ -40,17 +36,22 @@ export default function SolutionsWeProvide({ solutions }: { solutions: SolutionI
 function SolutionCard({
   title,
   icon: Icon,
+  href,
 }: {
   title: string;
   icon: React.ElementType;
+  href: string;
 }) {
   return (
     <div className="bg-[#1a1a1a] p-10 rounded shadow-md flex flex-col items-center text-center hover:bg-[#222] transition-all">
       <Icon className="text-yellow-400 w-12 h-12 mb-4 stroke-[1.5]" />
       <h3 className="text-lg font-bold mb-2">{title}</h3>
-      <p className="text-sm text-yellow-300 font-medium underline underline-offset-4">
+      <Link
+        href={href}
+        className="text-sm text-yellow-300 font-medium underline underline-offset-4 hover:text-yellow-400 transition"
+      >
         READ MORE
-      </p>
+      </Link>
     </div>
   );
 }
