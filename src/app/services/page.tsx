@@ -15,10 +15,10 @@ const page = () => {
       />
 
       <Suspense fallback={<div className="text-white text-center py-20">Loading Services...</div>}>
-        <Services />
+        <Services /> {/* ✅ This now includes SolutionsWeProvide internally */}
       </Suspense>
 
-       <ViewAllProjectsBanner title="READ MORE" href="/our-process" />
+      <ViewAllProjectsBanner title="READ MORE" href="/our-process" />
       <Footer />
     </>
   );

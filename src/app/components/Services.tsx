@@ -3,6 +3,20 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
+import SolutionsWeProvide from "./SolutionsWeProvide";
+
+import {
+  PlugZap,
+  Settings,
+  Shield,
+  AlarmSmoke,
+  BatteryCharging,
+  Building2,
+  ServerCog,
+  Lightbulb,
+  Power,
+  ShieldCheck,
+} from "lucide-react";
 
 export default function Services() {
   const searchParams = useSearchParams();
@@ -17,6 +31,25 @@ export default function Services() {
       setActiveTab(type);
     }
   }, [searchParams]);
+
+  const residentialSolutions = [
+    { title: "Home Electrical Installations", icon: PlugZap },
+    { title: "Panel Upgrades & Circuit Repairs", icon: Settings },
+    { title: "Home Security Systems", icon: Shield },
+    { title: "Fire Alarm & Sprinkler Systems", icon: AlarmSmoke },
+    { title: "EV Charger Installation", icon: BatteryCharging },
+  ];
+
+  const commercialSolutions = [
+    { title: "Commercial Electrical Installations", icon: Building2 },
+    { title: "Panel Replacements & Maintenance", icon: ServerCog },
+    { title: "Retail Lighting Systems", icon: Lightbulb },
+    { title: "Backup Generators & Power Systems", icon: Power },
+    { title: "Commercial Security Systems", icon: ShieldCheck },
+  ];
+
+  const currentSolutions =
+    activeTab === "residential" ? residentialSolutions : commercialSolutions;
 
   return (
     <div className="bg-[#111214] text-white">
@@ -65,16 +98,15 @@ export default function Services() {
             <p className="text-sm text-gray-300 mb-4 leading-relaxed">
               Your home deserves complete protection and flawless functionality.
               At ESF Pros, we provide comprehensive residential solutions that
-              integrate electrical safety, advanced security systems, and
-              reliable fire protection into one seamless service. Our certified
-              technicians bring decades of combined experience to every project,
-              ensuring your family’s safety while enhancing your home’s
-              efficiency. From emergency electrical repairs to smart home
-              security installations, we deliver peace of mind through precision
-              workmanship, cutting-edge technology, and 24/7 responsive service.
-              Trust ESF Pros to be your single point of contact for all your
-              home’s safety and operational needs—because your peace of mind is
-              our priority.
+              integrate electrical safety, advanced security systems, and reliable
+              fire protection into one seamless service. Our certified technicians
+              bring decades of combined experience to every project, ensuring your
+              family’s safety while enhancing your home’s efficiency. From emergency
+              electrical repairs to smart home security installations, we deliver
+              peace of mind through precision workmanship, cutting-edge technology,
+              and 24/7 responsive service. Trust ESF Pros to be your single point of
+              contact for all your home’s safety and operational needs—because your
+              peace of mind is our priority.
             </p>
             <ul className="list-disc list-inside text-sm space-y-2 text-gray-300">
               <li>Home Electrical Installations</li>
@@ -104,11 +136,11 @@ export default function Services() {
             <h1 className="text-3xl font-semibold mb-4">Commercial Services</h1>
             <p className="text-sm text-gray-300 mb-4 leading-relaxed">
               Protecting your business infrastructure requires industrial-grade
-              solutions. ESF Pros delivers enterprise-level electrical,
-              security, and fire protection services tailored for commercial
-              facilities, retail spaces, and industrial complexes. Our certified
-              specialists understand the critical importance of compliance,
-              uptime, and risk mitigation in commercial environments.
+              solutions. ESF Pros delivers enterprise-level electrical, security,
+              and fire protection services tailored for commercial facilities, retail
+              spaces, and industrial complexes. Our certified specialists understand
+              the critical importance of compliance, uptime, and risk mitigation in
+              commercial environments.
             </p>
             <h2 className="text-xl font-semibold text-white mb-2">Services</h2>
             <ul className="list-disc list-inside text-sm space-y-2 text-gray-300">
@@ -121,6 +153,9 @@ export default function Services() {
           </div>
         </div>
       )}
+
+      {/* 🔥 Dynamic Solutions Section */}
+      <SolutionsWeProvide solutions={currentSolutions} />
     </div>
   );
 }
