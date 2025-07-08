@@ -115,8 +115,8 @@ export default function Navbar() {
 >
   {[
     { name: "Home", href: "/" },
-    { name: "Residential", href: "/services?type=residential" },
-    { name: "Commercial", href: "/services?type=commercial" },
+    { name: "Residential", href: "/services/residential" },
+    { name: "Commercial", href: "/services/commercial" },
     { name: "About", href: "/about" },
     { name: "Careers", href: "/careers" },
     { name: "Blogs", href: "/blogs" },
