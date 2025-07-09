@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 const steps = [
   { label: "MEET & AGREE" },
@@ -15,14 +14,14 @@ export default function OurProcess() {
 
   return (
     <section className="relative bg-[#1d1f24] text-white py-20">
-      <div className="absolute inset-0 z-[-2]">
+      {/* <div className="absolute inset-0 z-[-2]">
         <Image
-          src="/bg-process.jpg" // replace with actual background image path
+          src="/bg-process.jpg" 
           alt="Our Process Background"
           fill
           className="object-cover object-center opacity-40"
         />
-      </div>
+      </div> */}
 
       <div className="max-w-screen-xl mx-auto px-4 text-center relative z-10">
         <div className="text-center mb-12">
@@ -48,21 +47,19 @@ export default function OurProcess() {
                 className="relative group focus:outline-none"
               >
                 <div className="flex flex-col items-center">
-                  <div
-                    className={`w-44 h-44 rounded-full flex items-center justify-center transition-all duration-300
-      ${
-        isActive
-          ? "bg-transparent border border-white"
-          : "bg-[#0ab0ff] hover:bg-black"
-      }`}
-                  >
-                    <span
-                      className={`text-lg font-semibold font-dosis tracking-widest px-4 text-center
-        ${isActive ? "text-white" : "text-white"}`}
-                    >
-                      {step.label}
-                    </span>
-                  </div>
+                 <div
+  className={`w-44 h-44 rounded-full flex items-center justify-center transition-all duration-300 px-4 text-center
+    ${
+      isActive
+        ? "bg-black border border-[#0ab0ff] text-white"
+        : "bg-[#0ab0ff] text-black hover:bg-white hover:text-black"
+    }`}
+>
+  <span className="text-lg font-semibold font-dosis tracking-widest leading-snug">
+    {step.label}
+  </span>
+</div>
+
 
                   {/* Vertical Line (Lollipop stick) - only for active & desktop */}
                   {isActive && (

@@ -108,18 +108,23 @@ export default function Hero() {
           </motion.h1>
         </AnimatePresence>
 <div className="flex flex-col sm:flex-row gap-4">
-  <Link href="/contact" passHref>
-    <button className="font-dosis text-sm tracking-widest px-6 py-2 border border-white hover:border-[#0ab0ff] hover:text-[#0ab0ff] transition-all select-none">
-      CONTACT US
-    </button>
-  </Link>
+  <div className="min-w-[48px] min-h-[48px] flex items-center justify-center">
+    <Link href="/contact" passHref>
+      <button className="font-dosis text-sm tracking-widest px-6 py-2 border border-white hover:border-[#0ab0ff] hover:text-[#0ab0ff] transition-all select-none">
+        CONTACT US
+      </button>
+    </Link>
+  </div>
 
-  <Link href="/contact" passHref>
-    <button className="font-dosis text-sm tracking-widest px-6 py-2 border border-white hover:border-[#0ab0ff] hover:text-[#0ab0ff] transition-all select-none">
-      REQUEST A CALL
-    </button>
-  </Link>
+  <div className="min-w-[48px] min-h-[48px] flex items-center justify-center">
+    <Link href="/contact" passHref>
+      <button className="font-dosis text-sm tracking-widest px-6 py-2 border border-white hover:border-[#0ab0ff] hover:text-[#0ab0ff] transition-all select-none">
+        REQUEST A CALL
+      </button>
+    </Link>
+  </div>
 </div>
+
       </div>
     </div>
   );
