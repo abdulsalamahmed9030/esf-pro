@@ -8,7 +8,7 @@ const page = () => {
     <>
       <SectionBanner
               title="Residential Services"
-              backgroundImage="/residential.jpg"
+              backgroundImage="/rec.jpg"
             />
             <ResidentialPage />
             <Footer />

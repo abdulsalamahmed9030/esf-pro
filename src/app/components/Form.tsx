@@ -1,144 +1,104 @@
 "use client";
 
-import { useState } from "react";
-
-export default function Form() {
-  const [radio1, setRadio1] = useState("Option 1");
-  const [radio2, setRadio2] = useState("Option 1");
-  const [checkboxes1, setCheckboxes1] = useState<string[]>([]);
-  const [checkboxes2, setCheckboxes2] = useState<string[]>([]);
-
-  const toggleCheckbox = (label: string, group: "1" | "2") => {
-    const update = (prev: string[]) =>
-      prev.includes(label)
-        ? prev.filter((item) => item !== label)
-        : [...prev, label];
-
-    if (group === "1") {
-      setCheckboxes1(update);
-    } else {
-      setCheckboxes2(update);
-    }
-  };
-
+export default function ContactForm() {
   return (
-    <section className="bg-[#111214] text-white py-16 px-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-        {/* Left: Form Inputs */}
-        <div>
-          <h2 className="uppercase tracking-widest text-sm mb-6">Contact Form</h2>
-          <form className="space-y-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full px-4 py-2 bg-transparent border border-gray-700 focus:outline-none placeholder-white"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full px-4 py-2 bg-transparent border border-gray-700 focus:outline-none placeholder-white"
-            />
-            <input
-              type="tel"
-              placeholder="Your Phone"
-              className="w-full px-4 py-2 bg-transparent border border-gray-700 focus:outline-none placeholder-white"
-            />
-            <textarea
-              placeholder="Your Message"
-              className="w-full h-40 px-4 py-2 bg-transparent border border-gray-700 focus:outline-none placeholder-white"
-            ></textarea>
-            <button
-              type="submit"
-              className="uppercase tracking-widest text-sm px-6 py-2 border border-gray-500 hover:bg-[#0ab0ff] hover:text-black transition"
-            >
-              Submit Form
-            </button>
-          </form>
-        </div>
-
-        {/* Right: Radios and Checkboxes */}
-        <div className="space-y-8">
-          {/* Radios Group 1 */}
-          <div>
-            <h3 className="uppercase tracking-widest text-sm mb-3">Radios</h3>
-            <div className="flex flex-wrap gap-4">
-              {["Option 1", "Option 2", "Option 3"].map((label) => (
-                <label
-                  key={label}
-                  onClick={() => setRadio1(label)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-sm bg-[#1e1e1e] cursor-pointer ${
-                    radio1 === label ? "text-[#0ab0ff]" : "text-gray-300"
-                  }`}
+    <>
+      {/* Contact Form Section */}
+      <section className="bg-[#111214] text-white py-16 px-4 md:px-10 lg:px-20">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Left side: Form inputs */}
+          <div className="lg:col-span-2 space-y-4">
+            <h2 className="uppercase text-sm tracking-widest mb-4">Send Us Message</h2>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                  className="w-full px-4 py-2 bg-transparent border border-gray-700 focus:outline-none placeholder-white"
+                />
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                  className="w-full px-4 py-2 bg-transparent border border-gray-700 focus:outline-none placeholder-white"
+                />
+                <input
+                  type="tel"
+                  placeholder="Your Phone"
+                  required
+                  className="w-full px-4 py-2 bg-transparent border border-gray-700 focus:outline-none placeholder-white"
+                />
+                {/* Dropdown Service Type */}
+                <select
+                  required
+                  className="w-full px-4 py-2 bg-transparent border border-gray-700 text-[#0ab0ff] focus:outline-none"
                 >
-                  <input type="radio" name="radio1" className="hidden" />
-                  {radio1 === label && <span className="text-xl">✔</span>}
-                  {label}
-                </label>
-              ))}
-            </div>
+                  <option value="">Select a Service</option>
+                  <option value="SECURITY SYSTEMS">SECURITY SYSTEMS</option>
+                  <option value="ELECTRICAL SERVICES">ELECTRICAL SERVICES</option>
+                  <option value="FIRE PROTECTION">FIRE PROTECTION</option>
+                  <option value="OTHER">OTHER</option>
+                </select>
+
+                <button
+                  type="submit"
+                  className="uppercase tracking-widest text-sm px-6 py-2 border border-gray-500 hover:bg-[#0ab0ff] hover:text-black transition w-fit"
+                >
+                  Submit Form
+                </button>
+              </div>
+
+              {/* Message Box */}
+              <textarea
+                placeholder="Your Message"
+                className="w-full h-full min-h-[200px] md:h-auto px-4 py-2 bg-transparent border border-gray-700 focus:outline-none placeholder-white"
+              ></textarea>
+            </form>
           </div>
 
-          {/* Checkboxes Group 1 */}
+          {/* Right side: Contact Info */}
           <div>
-            <h3 className="uppercase tracking-widest text-sm mb-3">Checkboxes</h3>
-            <div className="flex flex-wrap gap-4">
-              {["Check Item 1", "Check Item 2", "Check Item 3"].map((label) => (
-                <label
-                  key={label}
-                  onClick={() => toggleCheckbox(label, "1")}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-sm bg-[#1e1e1e] cursor-pointer ${
-                    checkboxes1.includes(label) ? "text-[#0ab0ff]" : "text-gray-300"
-                  }`}
-                >
-                  <input type="checkbox" className="hidden" />
-                  {checkboxes1.includes(label) && <span className="text-xl">✔</span>}
-                  {label}
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Radios Group 2 (Alternative Style) */}
-          <div>
-            <h3 className="uppercase tracking-widest text-sm mb-3">Radios (Alternative Style)</h3>
-            <div className="flex flex-wrap gap-6 items-center">
-              {["Option 1", "Option 2", "Option 3"].map((label) => (
-                <label
-                  key={label}
-                  onClick={() => setRadio2(label)}
-                  className={`flex items-center gap-2 cursor-pointer ${
-                    radio2 === label ? "text-[#0ab0ff]" : "text-gray-300"
-                  }`}
-                >
-                  <input type="radio" name="radio2" className="hidden" />
-                  {radio2 === label && <span className="text-xl">✔</span>}
-                  {label}
-                </label>
-              ))}
-            </div>
-          </div>
-
-          {/* Checkboxes Group 2 (Alternative Style) */}
-          <div>
-            <h3 className="uppercase tracking-widest text-sm mb-3">Checkboxes (Alternative Style)</h3>
-            <div className="flex flex-wrap gap-6 items-center">
-              {["Check Item 1", "Check Item 2", "Check Item 3"].map((label) => (
-                <label
-                  key={label}
-                  onClick={() => toggleCheckbox(label, "2")}
-                  className={`flex items-center gap-2 cursor-pointer ${
-                    checkboxes2.includes(label) ? "text-[#0ab0ff]" : "text-gray-300"
-                  }`}
-                >
-                  <input type="checkbox" className="hidden" />
-                  {checkboxes2.includes(label) && <span className="text-xl">✔</span>}
-                  {label}
-                </label>
-              ))}
-            </div>
+            <h2 className="uppercase text-sm tracking-widest mb-4">Contact Info</h2>
+            <ul className="text-sm text-gray-300 space-y-2">
+              <li>
+                <span className="text-[#0ab0ff] font-semibold">Address:</span> California
+              </li>
+              <li>
+                <span className="text-[#0ab0ff] font-semibold">Phone:</span> 650-770-4101
+              </li>
+              <li>
+                <span className="text-[#0ab0ff] font-semibold">Email:</span> info@esfpros.com
+              </li>
+              <li>
+                <span className="text-[#0ab0ff] font-semibold">Web:</span> esfpros.com
+              </li>
+              <li>
+                <span className="text-[#0ab0ff] font-semibold">Open:</span> Sunday - Friday 08:00 - 18:00
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Map Section */}
+      {/* Map Section */}
+<section className="px-4 md:px-10 lg:px-30 bg-black">
+  <div className="w-full h-[400px] md:h-[500px]">
+    <iframe
+      title="Company Location"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.8771495756205!2d-121.9158337!3d37.69908410000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808feddcd3089a19%3A0x685f88ef16d848d1!2s7059%20Commerce%20Cir%20Suite%20B%2C%20Pleasanton%2C%20CA%2094588%2C%20USA!5e0!3m2!1sen!2sin!4v1752069871028!5m2!1sen!2sin"
+      width="100%"
+      height="100%"
+      allowFullScreen={true}
+      loading="lazy"
+      className="border-none w-full h-full"
+      referrerPolicy="no-referrer-when-downgrade"
+    ></iframe>
+  </div>
+</section>
+
+
+    </>
   );
 }

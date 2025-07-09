@@ -34,6 +34,7 @@ export default function Navbar() {
     { name: "Careers", href: "/careers" },
     { name: "Blogs", href: "/blogs" },
     { name: "Contact Us", href: "/contact" },
+     { name: "Get A Quote", href: "/contact" },
   ];
 
   return (
@@ -121,6 +122,7 @@ export default function Navbar() {
     { name: "Careers", href: "/careers" },
     { name: "Blogs", href: "/blogs" },
     { name: "Contact Us", href: "/contact" },
+     { name: "Get A Quote", href: "/contact" },
   ].map((item, i) => (
     <Link
       key={i}

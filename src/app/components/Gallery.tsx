@@ -12,24 +12,24 @@ const categories = [
 ];
 
 const images = [
-  { src: "/1.jpg", title: "CCTV Surveillance", category: "RESIDENTIAL" },
+  { src: "/1.png", title: "CCTV Surveillance", category: "RESIDENTIAL" },
   {
-    src: "/2.jpg",
+    src: "/2.png",
     title: "Professional Camera Installation",
     category: "RESIDENTIAL",
   },
   {
-    src: "/3.jpg",
+    src: "/3.png",
     title: "Commercial Electrical Panel Setup",
     category: "HOSPITALY",
   },
-  { src: "/4.jpg", title: "Precision Circuit Testing", category: "OFFICE" },
+  { src: "/4.png", title: "Precision Circuit Testing", category: "OFFICE" },
   {
-    src: "/5.jpg",
+    src: "/5.png",
     title: "Fire Alarm Activation System",
     category: "COMMERCIAL",
   },
-  { src: "/6.jpg", title: "Emergency Strobe Lighting", category: "OFFICE" },
+  { src: "/6.png", title: "Emergency Strobe Lighting", category: "OFFICE" },
 ];
 
 export default function Gallery() {
