@@ -51,7 +51,7 @@ export default function Testimonials() {
           CUSTOMER SAYS
         </h2>
         <div className="relative flex items-center justify-center mt-4 mb-1">
-          <div className="w-1 h-1 bg-yellow-400 z-10" />
+          <div className="w-1 h-1 bg-[#0ab0ff] z-10" />
           <div className="absolute inset-0 flex items-center justify-between gap-2 w-full max-w-[200px] mx-auto">
             <span className="h-px bg-white w-[45%] opacity-60" />
             <span className="h-px bg-white w-[45%] opacity-60" />
@@ -65,11 +65,11 @@ export default function Testimonials() {
             key={idx}
             className="bg-black/70 text-white p-8 relative transition-all duration-500 shadow-lg flex flex-col gap-4"
           >
-            <div className="absolute -left-4 top-4 bg-yellow-400 w-10 h-10 flex items-center justify-center">
+            <div className="absolute -left-4 top-4 bg-[#0ab0ff] w-10 h-10 flex items-center justify-center">
               <FaQuoteLeft className="text-black text-lg" />
             </div>
             <p className="text-sm md:text-base">{item.quote}</p>
-            <p className="text-yellow-400 text-sm mt-2">{item.author}</p>
+            <p className="text-[#0ab0ff] text-sm mt-2">{item.author}</p>
           </div>
         ))}
       </div>

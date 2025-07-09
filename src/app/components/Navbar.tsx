@@ -64,11 +64,11 @@ export default function Navbar() {
             {navItems.map((item, i, arr) => (
               <li key={i} className="group relative flex items-center gap-2">
                 {item.dropdown ? (
-                  <span className="hover:text-yellow-400 cursor-pointer">
+                  <span className="hover:text-[#0ab0ff] cursor-pointer">
                     {item.name}
                   </span>
                 ) : (
-                  <Link href={item.href!} className="hover:text-yellow-400">
+                  <Link href={item.href!} className="hover:text-[#0ab0ff]">
                     {item.name}
                   </Link>
                 )}
@@ -80,7 +80,7 @@ export default function Navbar() {
                       <Link
                         key={idx}
                         href={subItem.href}
-                        className="px-4 py-2 text-white text-xs tracking-widest uppercase hover:bg-yellow-400 hover:text-black border-b border-gray-700 last:border-b-0"
+                        className="px-4 py-2 text-white text-xs tracking-widest uppercase hover:bg-[#0ab0ff] hover:text-black border-b border-gray-700 last:border-b-0"
                       >
                         {subItem.name}
                       </Link>
@@ -90,7 +90,7 @@ export default function Navbar() {
 
                 {/* Dot Separator */}
                 {i < arr.length - 1 && (
-                  <span className="w-1 h-1 bg-yellow-400 rounded-full inline-block" />
+                  <span className="w-1 h-1 bg-[#0ab0ff] rounded-full inline-block" />
                 )}
               </li>
             ))}

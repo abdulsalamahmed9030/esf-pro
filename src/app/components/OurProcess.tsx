@@ -30,7 +30,7 @@ export default function OurProcess() {
             OUR PROCESS
           </h2>
           <div className="relative flex items-center justify-center mt-4 mb-1">
-            <div className="w-1 h-1 bg-yellow-400 z-10" />
+            <div className="w-1 h-1 bg-[#0ab0ff] z-10" />
             <div className="absolute inset-0 flex items-center justify-between gap-2 w-full max-w-[200px] mx-auto">
               <span className="h-px bg-white w-[45%] opacity-60" />
               <span className="h-px bg-white w-[45%] opacity-60" />
@@ -53,12 +53,12 @@ export default function OurProcess() {
       ${
         isActive
           ? "bg-transparent border border-white"
-          : "bg-yellow-500 hover:bg-yellow-600"
+          : "bg-[#0ab0ff] hover:bg-black"
       }`}
                   >
                     <span
                       className={`text-lg font-semibold font-dosis tracking-widest px-4 text-center
-        ${isActive ? "text-white" : "text-black"}`}
+        ${isActive ? "text-white" : "text-white"}`}
                     >
                       {step.label}
                     </span>

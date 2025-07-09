@@ -41,7 +41,7 @@ export default function WhatWeDo() {
             WHAT WE DO
           </h2>
           <div className="relative flex items-center justify-center mt-4 mb-1">
-            <div className="w-1 h-1 bg-yellow-400 z-10" />
+            <div className="w-1 h-1 bg-[#0ab0ff] z-10" />
             <div className="absolute inset-0 flex items-center justify-between gap-2 w-full max-w-[200px] mx-auto">
               <span className="h-px bg-white w-[45%] opacity-60" />
               <span className="h-px bg-white w-[45%] opacity-60" />
@@ -62,7 +62,7 @@ export default function WhatWeDo() {
             >
               <div className="mb-6">
                 <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <h3 className="font-dosis text-yellow-400 tracking-widest text-xl m-0">
+                  <h3 className="font-dosis text-[#0ab0ff] tracking-widest text-xl m-0">
                     {service.title}
                   </h3>
                   <h4 className="font-dosis uppercase tracking-wide text-xl text-white m-0">
@@ -75,7 +75,7 @@ export default function WhatWeDo() {
 
                 {/* Read More Button */}
                 <Link href={service.link}>
-                  <button className="mt-4 font-dosis text-sm text-yellow-400 underline hover:text-yellow-500 transition duration-200">
+                  <button className="mt-4 font-dosis text-sm text-[#0ab0ff] underline hover:text-yellow-500 transition duration-200">
                     Read More →
                   </button>
                 </Link>
