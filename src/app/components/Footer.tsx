@@ -45,24 +45,27 @@ export default function Footer() {
           {/* Latest News */}
           <div>
             <h3 className="uppercase tracking-widest text-2xl mb-4">
-              Latest News
+              Quick Links
             </h3>
             <ul className="text-l text-white space-y-2">
-              <li className="hover:text-[#0ab0ff] cursor-pointer border-b border-gray-700 pb-1">
-                Top Benefits of Smart Home Upgrades
-              </li>
-              <li className="hover:text-[#0ab0ff] cursor-pointer border-b border-gray-700 pb-1">
-                How to Choose the Right CCTV System
-              </li>
-              <li className="hover:text-[#0ab0ff] cursor-pointer border-b border-gray-700 pb-1">
-                Fire Safety: Are You Prepared?
-              </li>
-              <li className="hover:text-[#0ab0ff] cursor-pointer border-b border-gray-700 pb-1">
-                Wiring Tips for New Constructions
-              </li>
-              <li className="hover:text-[#0ab0ff] cursor-pointer border-b border-gray-700 pb-1">
-                Why Electrical Code Compliance Matters
-              </li>
+              {[
+                { name: "Home", href: "/" },
+                { name: "Residential", href: "/services/residential" },
+                { name: "Commercial", href: "/services/commercial" },
+                { name: "About", href: "/about" },
+                { name: "Careers", href: "/careers" },
+                { name: "Blogs", href: "/blogs" },
+                { name: "Contact Us", href: "/contact" },
+              ].map((item, index) => (
+                <li key={index} className="border-b border-gray-700 pb-1">
+                  <a
+                    href={item.href}
+                    className="hover:text-[#0ab0ff] cursor-pointer"
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

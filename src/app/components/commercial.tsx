@@ -17,7 +17,7 @@ export default function Commercial() {
     <div className="bg-[#111214] text-white">
       <div className="max-w-7xl mx-auto py-12 px-4 flex flex-col md:flex-row gap-8 items-center">
         <div className="w-full md:w-1/2">
-          <Image src="/commercial.jpg" alt="Commercial Services" width={800} height={600} className="w-full h-auto object-cover" />
+          <Image src="/comm2.jpg" alt="Commercial Services" width={800} height={600} className="w-full h-auto object-cover" />
         </div>
         <div className="w-full md:w-1/2">
           <h1 className="text-3xl font-semibold mb-4">Commercial Services</h1>

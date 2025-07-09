@@ -25,16 +25,14 @@ export default function Navbar() {
     {
       name: "Services",
       dropdown: [
-       { name: "Residential", href: "/services/residential" },
-{ name: "Commercial", href: "/services/commercial" },
-
+        { name: "Residential", href: "/services/residential" },
+        { name: "Commercial", href: "/services/commercial" },
       ],
     },
     { name: "About", href: "/about" },
     { name: "Careers", href: "/careers" },
     { name: "Blogs", href: "/blogs" },
     { name: "Contact Us", href: "/contact" },
-     { name: "Get A Quote", href: "/contact" },
   ];
 
   return (
@@ -46,10 +44,10 @@ export default function Navbar() {
             : "bg-transparent"
         }`}
       >
-        <nav className="font-dosis flex items-center justify-between px-6 sm:px-12 md:px-16 lg:px-72 py-4 text-white uppercase text-md">
+        <nav className="font-dosis flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 py-4 text-white uppercase text-md max-w-screen-2xl mx-auto">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <Link href="/" className="relative h-28 w-28 block">
+          <div className="flex-shrink-0 h-20 w-20 sm:h-24 sm:w-24 relative">
+            <Link href="/" className="block h-full w-full relative">
               <Image
                 src="/logo.jpg"
                 alt="Logo"
@@ -59,9 +57,8 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Menu */}
-         <ul className="max-[700px]:hidden flex gap-6 items-center tracking-widest relative select-none">
-
+          {/* Desktop Menu: visible on lg+ screens */}
+          <ul className="hidden lg:flex flex-wrap items-center gap-6 tracking-widest relative select-none">
             {navItems.map((item, i, arr) => (
               <li key={i} className="group relative flex items-center gap-2">
                 {item.dropdown ? (
@@ -95,11 +92,21 @@ export default function Navbar() {
                 )}
               </li>
             ))}
+
+            {/* GET A QUOTE Button */}
+            <li>
+              <Link
+                href="/contact"
+                className="ml-4 px-6 py-2 border border-white hover:border-[#0ab0ff] hover:text-[#0ab0ff] transition-all text-sm tracking-widest"
+              >
+                GET A QUOTE
+              </Link>
+            </li>
           </ul>
 
-          {/* Hamburger Icon */}
+          {/* Hamburger Icon: show on screens below lg (1024px) */}
           <button
-            className="hidden max-[700px]:block z-[60] text-3xl"
+            className="block lg:hidden z-[60] text-3xl"
             onClick={toggleMenu}
             aria-label="Toggle Menu"
           >
@@ -110,31 +117,30 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-  className={`fixed top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-xl tracking-widest transition-transform duration-300 z-40 ${
-    menuOpen ? "translate-x-0" : "-translate-x-full"
-  } max-[700px]:flex hidden`}
->
-  {[
-    { name: "Home", href: "/" },
-    { name: "Residential", href: "/services/residential" },
-    { name: "Commercial", href: "/services/commercial" },
-    { name: "About", href: "/about" },
-    { name: "Careers", href: "/careers" },
-    { name: "Blogs", href: "/blogs" },
-    { name: "Contact Us", href: "/contact" },
-     { name: "Get A Quote", href: "/contact" },
-  ].map((item, i) => (
-    <Link
-      key={i}
-      href={item.href}
-      className="hover:text-yellow-400"
-      onClick={() => setMenuOpen(false)}
-    >
-      {item.name}
-    </Link>
-  ))}
-</div>
-
+        className={`fixed top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-xl tracking-widest transition-transform duration-300 z-40 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        } lg:hidden`}
+      >
+        {[
+          { name: "Home", href: "/" },
+          { name: "Residential", href: "/services/residential" },
+          { name: "Commercial", href: "/services/commercial" },
+          { name: "About", href: "/about" },
+          { name: "Careers", href: "/careers" },
+          { name: "Blogs", href: "/blogs" },
+          { name: "Contact Us", href: "/contact" },
+          { name: "Get A Quote", href: "/contact" },
+        ].map((item, i) => (
+          <Link
+            key={i}
+            href={item.href}
+            className="hover:text-yellow-400"
+            onClick={() => setMenuOpen(false)}
+          >
+            {item.name}
+          </Link>
+        ))}
+      </div>
     </>
   );
 }
