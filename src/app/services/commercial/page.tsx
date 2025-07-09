@@ -10,7 +10,7 @@ const page = () => {
     <>
       <SectionBanner
                     title="Commercial Services"
-                    backgroundImage="/com.jpg"
+                    backgroundImage="/residential.jpg"
                   />
                   <Commercial />
                 <Footer />

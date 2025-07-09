@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 const page = () => {
   return (
     <>
-      <SectionBanner title="Residential Service" backgroundImage="/residential.jpg" />
+      <SectionBanner title="About-Us" backgroundImage="/residential.jpg" />
       <ServiceIntro />
       <ViewAllProjectsBanner title="READ MORE" href="/our-process" />
       <Footer />
