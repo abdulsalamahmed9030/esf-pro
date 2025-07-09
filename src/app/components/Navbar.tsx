@@ -49,7 +49,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 h-20 w-20 sm:h-24 sm:w-24 relative">
             <Link href="/" className="block h-full w-full relative">
               <Image
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="Logo"
                 fill
                 className="object-contain select-none"
