@@ -45,7 +45,7 @@ export default function CareerStats() {
             >
               <AnimatedCount target={stat.value} trigger={inView} />
             </motion.h3>
-            <p className="mt-2 text-yellow-400 font-medium text-sm md:text-base font-dosis tracking-wider">
+            <p className="mt-2 text-[#0ab0ff] font-medium text-sm md:text-base font-dosis tracking-wider">
               {stat.label}
             </p>
           </div>

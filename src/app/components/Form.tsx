@@ -49,7 +49,7 @@ export default function Form() {
             ></textarea>
             <button
               type="submit"
-              className="uppercase tracking-widest text-sm px-6 py-2 border border-gray-500 hover:bg-white hover:text-black transition"
+              className="uppercase tracking-widest text-sm px-6 py-2 border border-gray-500 hover:bg-[#0ab0ff] hover:text-black transition"
             >
               Submit Form
             </button>
@@ -67,7 +67,7 @@ export default function Form() {
                   key={label}
                   onClick={() => setRadio1(label)}
                   className={`flex items-center gap-2 px-4 py-2 rounded-sm bg-[#1e1e1e] cursor-pointer ${
-                    radio1 === label ? "text-yellow-400" : "text-gray-300"
+                    radio1 === label ? "text-[#0ab0ff]" : "text-gray-300"
                   }`}
                 >
                   <input type="radio" name="radio1" className="hidden" />
@@ -87,7 +87,7 @@ export default function Form() {
                   key={label}
                   onClick={() => toggleCheckbox(label, "1")}
                   className={`flex items-center gap-2 px-4 py-2 rounded-sm bg-[#1e1e1e] cursor-pointer ${
-                    checkboxes1.includes(label) ? "text-yellow-400" : "text-gray-300"
+                    checkboxes1.includes(label) ? "text-[#0ab0ff]" : "text-gray-300"
                   }`}
                 >
                   <input type="checkbox" className="hidden" />
@@ -107,7 +107,7 @@ export default function Form() {
                   key={label}
                   onClick={() => setRadio2(label)}
                   className={`flex items-center gap-2 cursor-pointer ${
-                    radio2 === label ? "text-yellow-400" : "text-gray-300"
+                    radio2 === label ? "text-[#0ab0ff]" : "text-gray-300"
                   }`}
                 >
                   <input type="radio" name="radio2" className="hidden" />
@@ -127,7 +127,7 @@ export default function Form() {
                   key={label}
                   onClick={() => toggleCheckbox(label, "2")}
                   className={`flex items-center gap-2 cursor-pointer ${
-                    checkboxes2.includes(label) ? "text-yellow-400" : "text-gray-300"
+                    checkboxes2.includes(label) ? "text-[#0ab0ff]" : "text-gray-300"
                   }`}
                 >
                   <input type="checkbox" className="hidden" />

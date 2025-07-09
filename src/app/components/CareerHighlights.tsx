@@ -54,7 +54,7 @@ export default function CareerHighlights() {
       <div className="font-dosis max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {highlights.map((item, index) => (
           <div key={index} className="flex items-start gap-8">
-           <item.icon className="text-yellow-400 w-12 h-12 shrink-0 mt-1 stroke-yellow-400 stroke-[1] fill-none" />
+           <item.icon className="text-[#0ab0ff] w-12 h-12 shrink-0 mt-1 stroke-[#0ab0ff] stroke-[1] fill-none" />
 
             <div>
               <h3 className="text-2xl font-semibold mb-1">{item.title}</h3>
