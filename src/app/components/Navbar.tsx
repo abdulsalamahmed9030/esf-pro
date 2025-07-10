@@ -107,12 +107,13 @@ export default function Navbar() {
 
           {/* Hamburger Icon: show on screens below lg (1024px) */}
           <button
-            className="block lg:hidden z-[60] text-3xl"
-            onClick={toggleMenu}
-            aria-label="Toggle Menu"
-          >
-            {menuOpen ? "✖" : "☰"}
-          </button>
+  className="block lg:hidden z-[60] text-3xl"
+  onClick={toggleMenu}
+  aria-label="Toggle Menu"
+>
+  {menuOpen ? "✖" : "☰"}
+</button>
+
         </nav>
       </header>
 
