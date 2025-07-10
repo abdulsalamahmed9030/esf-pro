@@ -70,23 +70,39 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div>
-            <h3 className="uppercase tracking-widest text-2xl mb-4">
-              Contact Us
-            </h3>
-            <ul className="text-l text-white space-y-2">
-              <li>California</li>
-              <li>
-                <span className="text-[#0ab0ff]">Phone:</span> 650-770-4101
-              </li>
-              <li>
-                <span className="text-[#0ab0ff]">Email:</span> info@esfpros.com
-              </li>
-              <li>
-                <span className="text-[#0ab0ff]">Web:</span> esfpros.com
-              </li>
-            </ul>
-          </div>
+          {/* Contact Us */}
+<div>
+  <h3 className="uppercase tracking-widest text-2xl mb-4">Contact Us</h3>
+  <ul className="text-l text-white space-y-2 mb-4">
+    <li>California</li>
+    <li>
+      <span className="text-[#0ab0ff]">Phone:</span> 650-770-4101
+    </li>
+    <li>
+      <span className="text-[#0ab0ff]">Email:</span> info@esfpros.com
+    </li>
+    <li>
+      <span className="text-[#0ab0ff]">Web:</span> esfpros.com
+    </li>
+  </ul>
+
+  {/* Social Icons in Brand Colors */}
+  <div className="flex gap-4 mt-4">
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+      <FaFacebookF className="text-[#1877F2] text-xl hover:scale-110 transition" />
+    </a>
+    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+      <FaXTwitter className="text-white text-xl hover:scale-110 transition" />
+    </a>
+    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+      <FaInstagram className="text-[#E1306C] text-xl hover:scale-110 transition" />
+    </a>
+    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+      <FaYoutube className="text-[#FF0000] text-xl hover:scale-110 transition" />
+    </a>
+  </div>
+</div>
+
 
           {/* Services */}
           <div>
@@ -104,19 +120,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Footer */}
-        <div className="bg-black text-xl text-gray-400 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-40 py-4 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-          <p>
-            &copy; Copyright 2025{" "}
-            <span className="text-[#0ab0ff]">ESFPROS</span>
-          </p>
+       <div className="bg-black text-xl text-gray-400 px-4 sm:px-8 md:px-12 lg:px-20 xl:px-40 py-4 text-center">
+  <p>
+    &copy; Copyright 2025{" "}
+    <span className="text-[#0ab0ff]">ESFPROS</span>
+  </p>
+</div>
 
-          <div className="flex gap-4 items-center">
-            <FaFacebookF className="hover:text-[#0ab0ff] cursor-pointer" />
-            <FaXTwitter className="hover:text-[#0ab0ff] cursor-pointer" />
-            <FaInstagram className="hover:text-[#0ab0ff] cursor-pointer" />
-            <FaYoutube className="hover:text-[#0ab0ff] cursor-pointer" />
-          </div>
-        </div>
       </footer>
 
       {/* Back to Top Button (floating) */}
