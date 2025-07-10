@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -116,31 +117,69 @@ export default function Navbar() {
       </header>
 
       {/* Mobile Menu */}
-      <div
-        className={`fixed top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-xl tracking-widest transition-transform duration-300 z-40 ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        } lg:hidden`}
-      >
-        {[
-          { name: "Home", href: "/" },
-          { name: "Residential", href: "/services/residential" },
-          { name: "Commercial", href: "/services/commercial" },
-          { name: "About", href: "/about" },
-          { name: "Careers", href: "/careers" },
-          { name: "Blogs", href: "/blogs" },
-          { name: "Contact Us", href: "/contact" },
-          { name: "Get A Quote", href: "/contact" },
-        ].map((item, i) => (
-          <Link
-            key={i}
-            href={item.href}
-            className="hover:text-yellow-400"
-            onClick={() => setMenuOpen(false)}
-          >
-            {item.name}
-          </Link>
-        ))}
-      </div>
+     <div
+  className={`fixed top-0 left-0 w-full h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-xl tracking-widest transition-transform duration-300 z-40 ${
+    menuOpen ? "translate-x-0" : "-translate-x-full"
+  } lg:hidden`}
+>
+  {/* Navigation Links */}
+  {[
+    { name: "Home", href: "/" },
+    { name: "Residential", href: "/services/residential" },
+    { name: "Commercial", href: "/services/commercial" },
+    { name: "About", href: "/about" },
+    { name: "Careers", href: "/careers" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Get A Quote", href: "/contact" },
+  ].map((item, i) => (
+    <Link
+      key={i}
+      href={item.href}
+      className="hover:text-yellow-400"
+      onClick={() => setMenuOpen(false)}
+    >
+      {item.name}
+    </Link>
+  ))}
+
+  {/* Social Icons */}
+  <div className="flex gap-6 mt-10">
+    <a
+      href="https://facebook.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+    >
+      <FaFacebookF className="text-[#1877F2] text-2xl hover:scale-110 transition" />
+    </a>
+    <a
+      href="https://twitter.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Twitter"
+    >
+      <FaXTwitter className="text-white text-2xl hover:scale-110 transition" />
+    </a>
+    <a
+      href="https://instagram.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+    >
+      <FaInstagram className="text-[#E1306C] text-2xl hover:scale-110 transition" />
+    </a>
+    <a
+      href="https://youtube.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="YouTube"
+    >
+      <FaYoutube className="text-[#FF0000] text-2xl hover:scale-110 transition" />
+    </a>
+  </div>
+</div>
+
     </>
   );
 }
