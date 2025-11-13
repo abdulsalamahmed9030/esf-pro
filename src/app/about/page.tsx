@@ -9,7 +9,7 @@ const page = () => {
     <>
       <SectionBanner title="About-Us" backgroundImage="/residential.jpg" />
       <ServiceIntro />
-      <ViewAllProjectsBanner title="READ MORE" href="/our-process" />
+      <ViewAllProjectsBanner title="READ MORE" href="/our-process" /> 
       <Footer />
     </>
   )
